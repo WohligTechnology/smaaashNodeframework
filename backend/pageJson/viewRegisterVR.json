@@ -20,6 +20,11 @@
         "name": "City",
         "isSort": "",
         "tableRef": "city"
+    },
+     {
+        "name": "CODE",
+        "isSort": "",
+        "tableRef": "clonedId"
     }],
     "action": [{
         "name": "edit",

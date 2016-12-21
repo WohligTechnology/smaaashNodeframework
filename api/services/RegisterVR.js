@@ -11,7 +11,7 @@ var schema = new Schema({
     eventDate: Date,
     city: {
         type: String,
-        enum: ["Mumbai", "Ludhiana","Gurgoan","Bengaluru", "Noida", "Hyderabad", , ]
+        enum: ["Mumbai", "Ludhiana", "Gurgoan", "Bengaluru", "Noida", "Hyderabad", , ]
     },
 });
 
@@ -35,6 +35,15 @@ var model = {
             if (err) {
                 callback(err, null);
             } else {
+
+                var id = data._id;
+                var CODESTRING = id.toString();
+                // console.log(id);
+                console.log("ID", CODESTRING);
+                var code = CODESTRING.substr(18);
+                var CODE = code.toUpperCase();
+                console.log("CODE", CODE);
+
                 //callback("Resp", data);
                 console.log("DATA", data.email);
                 console.log("NAMEDATA", data.name);
@@ -42,6 +51,8 @@ var model = {
                 emailData.email = data.email;
                 emailData.cc = "pratik.gawand@wohlig.com";
                 emailData.content = data;
+                emailData.code = CODE;
+
                 emailData.filename = "emailer.ejs";
                 emailData.subject = "SMAAASH - VR";
                 Config.email(emailData, function (err, emailRespo) {

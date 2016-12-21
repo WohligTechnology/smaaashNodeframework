@@ -323,6 +323,14 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             function (data, ini) {
                 if (ini == i) {
                     $scope.items = data.data.results;
+                    _.each($scope.items,function(n){
+                        console.log("In ",n._id);
+                        var a=n._id;
+                        a=a.substr(18);
+                        a=a.toUpperCase();
+                        n.clonedId=a;
+                    });
+                    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAA",$scope.items);
                     $scope.totalItems = data.data.total;
                     $scope.maxRow = data.data.options.count;
                 }
