@@ -26,7 +26,7 @@ module.exports = {
    ***************************************************************************/
 
   port: 80,
-  realHost: "http://exchange.wohlig.co.in",
+  realHost: "http://smaash.wohlig.co.in",
 
 
 

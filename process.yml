@@ -1,5 +1,5 @@
 apps:
   - script: "app.js"
-    name: "TBT 1339"
+    name: "SmaaashLanding 80"
     watch: true
     args: "--prod"
