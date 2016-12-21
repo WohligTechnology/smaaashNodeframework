@@ -1,0 +1,9 @@
+<div class="form-group" fields>
+    <label>{{type.name}} <span ng-show="type.required">*</span></label>
+    <input type="text" name="{{type.tableRef+'youtube'}}" ng-model="youtube.url" placeholder="{{type.placeholder}}" ng-change="changeYoutubeUrl(youtube.url);"
+        class="form-control">
+    <div class="error-msg" ng-show="detailForm[type.tableRef].$invalid && detailForm[type.tableRef].$touched">Please enter valid {{type.name}}</div>
+    <img class="img-thumbnail" ng-if="formData[type.tableRef] && formData[type.tableRef] != '' " ng-src="{{'http://img.youtube.com/vi/'+formData[type.tableRef]+'/hqdefault.jpg'}}"
+        alt="">
+    <input type="hidden" name="{{type.tableRef}}" ng-model="formData[type.tableRef]">
+</div>

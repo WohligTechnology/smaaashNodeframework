@@ -1,0 +1,115 @@
+{
+  "title": "Edit DestinationContent",
+  "name": "DestinationContent",
+  "jsonPage": "viewDestinationContent",
+  "desciption": "",
+  "pageType": "edit",
+  "urlFields": ["_id"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Description",
+        "type": "textarea",
+        "tableRef": "description",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "Destination",
+        "type": "selectFromTable",
+        "tableRef": "destination",
+        "placeholder": "Enter status",
+        "id": "input1",
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", "unique"],
+        "url": "Destination/search",
+        "dropDownType": "single"
+    },{
+        "name": "DestinationTitle",
+        "type": "selectFromTable",
+        "tableRef": "destinationTitle",
+        "placeholder": "Enter status",
+        "id": "input1",
+        "searchApi":"searchCall",
+        "validation": ["required", "trim", "unique"],
+        "url": "DestinationTitle/search",
+        "filterField": "destination",
+        "filterValue": "destination",
+        "dropDownType": "single"
+    },{
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["true", "false"]
+    },{
+        "name": "Images",
+        "type": "box",
+        "tableRef": "images",
+        "validation": ["", "trim", "unique"],
+        "fields": [{
+            "name": "Image",
+            "type": "image",
+            "size": "1920 X 1080",
+            "option": "single",
+            "tableRef": "image",
+            "placeholder": "Enter Image",
+            "id": "input1",
+            "onView": true,
+            "validation": ["", "trim", "unique"],
+            "url": ""
+        },{
+            "name": "Status",
+            "type": "tags",
+            "tableRef": "status",
+            "placeholder": "Enter status",
+            "id": "status",
+            "validation": ["", "trim", "unique"],
+            "url": "",
+            "dropDownField": "",
+            "dropDownType": "single",
+            "onView": true,
+            "dropDown": ["true", "false"]
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitDestinationContent",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewDestinationContent"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewDestinationContent"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "DestinationContent/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "DestinationContent/getOne",
+        "params": "_id"
+    }
+  }

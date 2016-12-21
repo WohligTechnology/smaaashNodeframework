@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Exchange of Artist </title>
+</head>
+
+<body style="padding: 0 50px 50px 50px;
+            font-family: sans-serif;">
+    <div class="header" style=" display: block;
+            width: 100%;">
+        <div class="hdr-details" style=" display: inline-block;
+            width: 80%;
+            vertical-align: top;
+            text-align: left;">
+            <h1 class="text-center">Quotation for Artists</h1>
+        </div>
+        <div class="hdr-logo" style=" display: inline;
+            width: 20%;">
+           <img src="http://exchange.wohlig.co.in/api/upload/readFile?file=<%=content.bgimage%>"  alt="User Image" width="130px" height="auto">
+
+        </div>
+    </div>
+    <p><b>Event Date: </b> 26/11/2016</p>
+
+    <p><b>City:</p>
+    <div class="artist-details" style="margin-bottom: 50px;">
+          
+<table style="  width: 80%;
+            border-collapse: collapse;">
+            <tr style=" width: 100%;">
+                <th style="width:20%  text-align: left;
+            border: 1px solid #000;
+            padding: 10px;" colspan="1"><b>Sr.</b></th>
+                <th style="width:50%  text-align: left;
+            border: 1px solid #000;
+            padding: 10px;"><b>Artist</b></th>
+                <th style="width:20%  text-align: left;
+            border: 1px solid #000;
+            padding: 10px;"><b> City</b></th>
+                            <th style="width:20%  text-align: left;
+            border: 1px solid #000;
+            padding: 10px;"><b>Amounts</b></th>
+                <th style="width:10%; border:none"><b></b></th>
+            </tr>
+ 
+<% var i =1; var sum=0;%>
+ <% content.shortList.forEach(function(a) { 
+ var total = parseInt(a.artist.budget);
+  sum = sum+total;
+%> 
+            <tr style=" width: 100%;">
+           
+                <td style="  padding: 0 10px;
+            border: 1px solid #000;">
+
+                    <p><%=  i %></p>
+                </td>
+
+                <td style="  padding: 0 10px;
+            border: 1px solid #000;">
+           <p><%= a.artist.artistName%></p>
+   </td>
+
+                <td style="  padding: 0 10px;
+            border: 1px solid #000;">
+           <p><%= a.artist.artistCity%>
+          
+           </p>
+   </td>
+
+                <td style="  padding: 0 10px;
+            border: 1px solid #000;"><span>  <p>Rs.   <%= a.artist.budget%></p>
+  </span></td>
+             </p>
+<td style="border:none"><a target="_blank" href="http://exchange.wohlig.co.in/api/AppUser/sendArtist?_id=<%= a.artist._id%>&email=<%= content.email%>&bgimage=<%= content.bgimage%>"><button type="button" style="width: 100%; margin: 0 10px;
+            margin: 0 10px;
+            padding: 6px 12px;" name="button" >Pro forma invoice
+</button></a></td>
+            </tr>
+<% i++; }); %>
+        </table>
+
+    </div>
+    <div class="total">
+        <label style=" font-weight: bold;
+            margin-right: 10px;"> Total :</label>
+        <span>Rs.  <%= sum%></p></span>
+    </div>
+    <div class="footer" style=" border-top: 1px solid #ccc;
+            display: block;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;">
+        <div class="address" style="  display: inline-block;
+            width: 48%;
+            padding: 0 10px;">
+            <p><b>Address: </b></p>
+        </div>
+        <div class="term" style="display: inline-block;
+            width: 48%;
+            padding: 0 10px;">
+            <p><b>Terms & Conditions: </b></p>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,155 @@
+{
+  "title": "Create User",
+  "name": "User",
+  "jsonPage": "viewUser",
+  "desciption": "",
+  "pageType": "create",
+  "urlFields": ["AppUser"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Agency",
+        "type": "text",
+        "tableRef": "agency",
+        "placeholder": "Enter Agency",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Email",
+        "type": "text",
+        "tableRef": "email",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Mobile",
+        "type": "text",
+        "tableRef": "mobile",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Web-Site",
+        "type": "text",
+        "tableRef": "website",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Image",
+        "type": "image",
+        "tableRef": "image",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Background Image",
+        "type": "image",
+        "tableRef": "bgimage",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Password",
+        "type": "text",
+        "tableRef": "password",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Date",
+        "type": "date",
+        "tableRef": "date",
+        "placeholder": "Enter name",
+        "id": "input1",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    },{
+        "name": "Status",
+        "type": "tags",
+        "tableRef": "status",
+        "placeholder": "Enter status",
+        "id": "status",
+        "validation": ["", "trim", "unique"],
+        "url": "",
+        "dropDownField": "",
+        "dropDownType": "single",
+        "onView": true,
+        "dropDown": ["true", "false"]
+    },{
+        "name": "MyList",
+        "type": "box",
+        "tableRef": "myList",
+        "validation": ["", "trim", "unique"],
+        "fields": [{
+             "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter name",
+            "id": "input1",
+            "validation": ["", "trim", "unique"],
+            "url": ""
+        },{
+            "name": "Image",
+            "type": "image",
+            "option": "single",
+            "tableRef": "image",
+            "placeholder": "Enter Image",
+            "id": "input1",
+            "onView": true,
+            "validation": ["", "trim", "unique"],
+            "url": ""
+        },{
+             "name": "City",
+            "type": "text",
+            "tableRef": "city",
+            "placeholder": "Enter name",
+            "id": "input1",
+            "validation": ["", "trim", "unique"],
+            "url": ""
+        },{
+             "name": "Videos",
+            "type": "text",
+            "tableRef": "videos",
+            "placeholder": "Enter name",
+            "id": "input1",
+            "validation": ["", "trim", "unique"],
+            "url": ""
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitUser",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewUser"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewUser"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "AppUser/save"
+    }
+}
