@@ -11,7 +11,10 @@ var controller = {
                 data: "Invalid Request"
             });
         }
-    }
+    },
+     searchVR: function (req, res) {
+        RegisterVR.searchVR(req.body, res.callback);
+    },
 };
 
 module.exports = _.assign(module.exports, controller);
