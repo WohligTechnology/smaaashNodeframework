@@ -38,7 +38,7 @@
         "type": "apiCallConfirm",
         "title": "Delete Coach",
         "content": "Are you sure you want to delete User?",
-        "api": "AppUser/delete",
+        "api": "User/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -64,7 +64,7 @@
         "action": "createUser"
     }],
     "apiCall": {
-        "url": "AppUser/search",
+        "url": "User/search",
         "params": "_id"
     }
 }

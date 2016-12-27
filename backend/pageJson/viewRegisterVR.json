@@ -6,7 +6,7 @@
     "urlFields": ["_id"],
     "fields": [{
         "name": "Name",
-        "isSort": "",
+        "isSort": "asc",
         "tableRef": "name"
     }, {
         "name": "Email",
